@@ -12,7 +12,7 @@ FASTA=$1
 
 #shifter --image=bryce911/bbtools comparesketch.sh   -Xmx1000m -threads=1  in=$FASTA ref=/global/projectb/sandbox/rqc/andreopo/src/bitbucket/jgi-ml_clean/classifier/dl/asafl_plasmidPred/plasmid_originOfReplication.nr.fasta.sketch persequence
 
-/srv/jgi-ml/classifier/dl/bbmap/comparesketch.sh   -Xmx1000m -threads=1  in=$FASTA ref=/srv/jgi-ml/classifier/dl/asafl_plasmidPred/plasmid_originOfReplication.nr.fasta.sketch persequence   
+${DEEPLASMID_HOME}/bbmap/comparesketch.sh   -Xmx1000m -threads=1  in=$FASTA ref=${DEEPLASMID_HOME}/asafl_plasmidPred/plasmid_originOfReplication.nr.fasta.sketch persequence   
 
 #& ID=$! ; fg
 
