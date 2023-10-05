@@ -5,14 +5,14 @@ echo "Deeplasmid - Plasmid finder for microbial genome assemblies.
 Running feature_DL_plasmid_predict.sh .
 This .sh script is meant for running Deeplasmid from the Docker image.
 Usage: please specify 2 arguments - the input fasta file and output directory - as follows:
- docker run -it  -v /path/to/input/fasta:/srv/jgi-ml/classifier/dl/in.fasta  -v  /path/to/output/directory:/srv/jgi-ml/classifier/dl/outdir   billandreo/deeplasmid     feature_DL_plasmid_predict.sh  in.fasta outdir
+ docker run -it  -v /path/to/input/fasta:${DEEPLASMID_HOME}/in.fasta  -v  /path/to/output/directory:${DEEPLASMID_HOME}/outdir   billandreo/deeplasmid     feature_DL_plasmid_predict.sh  in.fasta outdir
 Contact person: Bill Andreopoulos, wandreopoulos@lbl.gov
 Last maintained: December 22, 2022"
 
 #module load deeplearning
 
 if [ $# -ne 2 ]; then
-    echo "Usage of Deeplasmid from the Docker image, please specify 2 arguments (input fasta file and output directory): docker run -it  -v /path/to/input/fasta:/srv/jgi-ml/classifier/dl/in.fasta  -v  /path/to/output/directory:/srv/jgi-ml/classifier/dl/outdir   billandreo/deeplasmid     feature_DL_plasmid_predict.sh  in.fasta outdir"
+    echo "Usage of Deeplasmid from the Docker image, please specify 2 arguments (input fasta file and output directory): docker run -it  -v /path/to/input/fasta:${DEEPLASMID_HOME}/in.fasta  -v  /path/to/output/directory:${DEEPLASMID_HOME}/outdir   billandreo/deeplasmid     feature_DL_plasmid_predict.sh  in.fasta outdir"
     exit 1
 fi
 
@@ -71,7 +71,7 @@ exit 1
 fi
 
 #The model used for prediction
-MODEL=/srv/jgi-ml/classifier/dl/Plasmid_Models/plasmid4z-newfeat12-
+MODEL=${DEEPLASMID_HOME}/Plasmid_Models/plasmid4z-newfeat12-
 echo "Model used for prediction: $MODEL" 
 echo "Model used for prediction: $MODEL" > $OUT/outPR.$DATETIME/model_path.txt
 echo "Command used: $0 $1 $2"
