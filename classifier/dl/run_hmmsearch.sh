@@ -10,7 +10,7 @@ FASTA=$1
 
 #####shifter  --image=registry.services.nersc.gov/jgi/prodigal:latest  prodigal  -a  $FASTA.gene.faa  -d  $FASTA.gene.fasta  -i  $FASTA  -o  $FASTA.prodigal.out  -p meta
 
-/srv/jgi-ml/classifier/dl/hmmer-3.3.2/src/hmmsearch --noali --cut_nc -o  $FASTA.out_pfam --domtblout $FASTA.domtblout --cpu 16  Pfam-A.TMP2.hmm  $FASTA.gene.faa
+${DEEPLASMID_HOME}/hmmer-3.3.2/src/hmmsearch --noali --cut_nc -o  $FASTA.out_pfam --domtblout $FASTA.domtblout --cpu 16  Pfam-A.TMP2.hmm  $FASTA.gene.faa
 
 
 #& ID=$! ; fg
