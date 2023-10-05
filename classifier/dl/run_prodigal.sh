@@ -9,7 +9,7 @@ FASTA=$1
 
 #shifter  --image=registry.services.nersc.gov/jgi/prodigal:latest  prodigal  -a  $FASTA.gene.faa  -d  $FASTA.gene.fasta  -i  $FASTA  -o  $FASTA.prodigal.out  -p meta
 
-/srv/jgi-ml/classifier/dl/Prodigal/prodigal  -a  $FASTA.gene.faa  -d  $FASTA.gene.fasta  -i  $FASTA  -o  $FASTA.prodigal.out  -p meta   
+${DEEPLASMID_HOME}/Prodigal/prodigal  -a  $FASTA.gene.faa  -d  $FASTA.gene.fasta  -i  $FASTA  -o  $FASTA.prodigal.out  -p meta   
 
 #& ID=$! ; fg
 
